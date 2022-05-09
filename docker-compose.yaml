@@ -1,0 +1,18 @@
+version: '2.5' 
+services:
+  web:
+    image: infracloudio/csvserver 
+    volumes: 
+      - /root/csvserver/solution/inputFile:/csvserver/inputdata
+    ports:
+      - "9393:9300"
+    environment:
+      - CSVSERVER_BORDER=Orange  
+  prometheus:
+    image: prom/prometheus:v2.22.0 
+    ports: 
+      - "9090:9090"
+    volumes:
+      - /root/csvserver/solution/inputFile:/data
+    
+#docker run -d -p 9393:9300 --env CSVSERVER_BORDER=Orange --volume=$(pwd)/inputFile:/csvserver/inputdata infracloudio/csvserver 
