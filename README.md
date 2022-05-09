@@ -1,3 +1,5 @@
+Adding docx file(Infracloud Assignment with snaps) with screenshot for reference
+
 sudo amazon-linux-extras install
 docker
 sudo service docker start
@@ -29,13 +31,21 @@ Part 1
 Write a bash script gencsv.sh to generate a file named inputFile whose content looks like
 
 #!/bin/bash
+
 RANDOM=$$
+
 num=0
+
 ARG1=${1:-10}
+
 while [[ ${num} -le ${ARG1} ]]
+
 do
+
 echo $num $RANDOM
+
 (( num = num + 1 ))
+
 Done
 
 
